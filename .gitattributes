@@ -1,0 +1,21 @@
+# Retained paper results are binary and should never enter ordinary Git blobs.
+example/lowdim/example_*/result/implicit_function/best.pt filter=lfs diff=lfs merge=lfs -text
+example/lowdim/example_*/result/reconstruction/zero_mesh.npz filter=lfs diff=lfs merge=lfs -text
+
+# Keep source and experiment records portable across operating systems.
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.tex text eol=lf
+*.cff text eol=lf
+LICENSE text eol=lf
+
+# Frozen paper inputs retain the exact bytes recorded in evaluation_assets.json.
+/datasets/**/*.csv filter=lfs diff=lfs merge=lfs -text
+/datasets/**/*.obj filter=lfs diff=lfs merge=lfs -text
+/datasets/**/*.ply filter=lfs diff=lfs merge=lfs -text
+/datasets/**/*.npz filter=lfs diff=lfs merge=lfs -text

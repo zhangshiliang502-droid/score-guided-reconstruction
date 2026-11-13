@@ -1,0 +1,17 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "ABC_02_00001373",
+  "evaluation_seed_offset": 8,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/ABC_Official_Selected_8/selected/ABC_02_00001373/ABC_02_00001373_mesh.obj",
+  "coordinate_transform": {
+    "mode": "similarity_raw_to_reference",
+    "scale": 0.09661785812705785,
+    "translation": [
+      -0.6938195416669667,
+      -0.009190043961577674,
+      -0.011042009258155093
+    ],
+    "validation_rmse": 1.0384126763352294E-8
+  }
+}

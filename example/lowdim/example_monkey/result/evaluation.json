@@ -1,0 +1,111 @@
+{
+  "schema": "lowdim-reconstruction-evaluation/v3",
+  "dataset": "Monkey",
+  "method": "SGR",
+  "configuration": "config/training.json",
+  "mesh": "result/reconstruction/zero_mesh.npz",
+  "mesh_to_raw_transform": {
+    "definition": "raw_vertex = mesh_vertex * scale + translation",
+    "scale": 1.0,
+    "translation": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "reference_pointcloud": "datasets/Monkey/open3d_monkey_surface_points_250k_20260605.csv",
+  "reference_frame": "training_mean_maxradius_normalized",
+  "vertices": 346704,
+  "faces": 693412,
+  "normalization": {
+    "contract": "training_mean_and_max_center_radius",
+    "data_mean_raw": [
+      0.0017945346189662814,
+      0.17868952453136444,
+      0.0750342458486557
+    ],
+    "data_scale_raw": 1.4489716291427612,
+    "applies_to": [
+      "point_to_surface",
+      "chamfer_l2",
+      "ghost_zero",
+      "training_input_diagnostic"
+    ]
+  },
+  "point_to_surface": {
+    "definition": "sqrt(mean_i dist(x_i, M)^2)",
+    "canonical_point_kind": "independent_mesh_surface_sample",
+    "canonical_point_source": "datasets/source_meshes/Monkey/monkey.obj",
+    "canonical_points": 1000000,
+    "surface_samples": 1000000,
+    "canonical_seed": 20260723,
+    "surface_seed": 20270723,
+    "fitting_error": 3.489477660877869e-05,
+    "fit_rmse": 0.005907180089414804
+  },
+  "training_input_diagnostic": {
+    "definition": "sqrt(mean_i dist(x_i, M)^2)",
+    "role": "diagnostic_only_not_table_1",
+    "input_points": 250000,
+    "surface_samples": 1000000,
+    "fitting_error": 3.484969939529473e-05,
+    "fit_rmse": 0.0059033633968522325
+  },
+  "chamfer_l2": {
+    "definition": "mean d(reconstruction,GT)^2 + mean d(GT,reconstruction)^2",
+    "ground_truth_kind": "independent_mesh_surface_sample",
+    "ground_truth_source": "datasets/source_meshes/Monkey/monkey.obj",
+    "test_samples": 1000000,
+    "reconstruction_samples": 1000000,
+    "test_seed": 20260723,
+    "reconstruction_seed": 20270723,
+    "normalization_contract": "training_mean_and_max_center_radius",
+    "normalization_scale_raw": 1.4489716291427612,
+    "reconstruction_to_test_mse": 9.849992936063732e-06,
+    "test_to_reconstruction_mse": 3.489477660877869e-05,
+    "value": 4.4744769544842424e-05
+  },
+  "ghost_zero": {
+    "detector": "extracted_mesh_connected_component_median_distance",
+    "spacing_sample_size": 250000,
+    "spacing_k": 8,
+    "spacing_median": 0.007088939591641662,
+    "r_out_factor": 3.0,
+    "r_out": 0.021266818774924985,
+    "component_count": 3,
+    "ghost_component_count": 0,
+    "ghost_area_ratio": 0.0,
+    "components": [
+      {
+        "component_id": 0,
+        "vertices": 346605,
+        "faces": 693222,
+        "area": 5.046212354849922,
+        "area_ratio": 0.9998090084942585,
+        "distance_to_reference_p50": 0.002265370745624421,
+        "distance_to_reference_p90": 0.00414813303389397,
+        "ghost_component": false
+      },
+      {
+        "component_id": 1,
+        "vertices": 93,
+        "faces": 182,
+        "area": 0.0009510910008874205,
+        "area_ratio": 0.00018844021688289506,
+        "distance_to_reference_p50": 0.004142508398187058,
+        "distance_to_reference_p90": 0.005367318232716152,
+        "ghost_component": false
+      },
+      {
+        "component_id": 2,
+        "vertices": 6,
+        "faces": 8,
+        "area": 1.287680471902715e-05,
+        "area_ratio": 2.5512888585299373e-06,
+        "distance_to_reference_p50": 0.002166825285009515,
+        "distance_to_reference_p90": 0.002713176984956426,
+        "ghost_component": false
+      }
+    ]
+  }
+}

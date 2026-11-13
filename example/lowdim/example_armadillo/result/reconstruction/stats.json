@@ -1,0 +1,30 @@
+{
+  "extractor": "formal_sgr_complete_marching_cubes",
+  "checkpoint": "result/implicit_function/best.pt",
+  "step": 97000,
+  "grid_n": 360,
+  "axis_ranges": [
+    [
+      -76.18357849121094,
+      76.17893981933594
+    ],
+    [
+      -69.31993103027344,
+      112.19923400878906
+    ],
+    [
+      -69.22632598876953,
+      69.24337768554688
+    ]
+  ],
+  "bounds_source": "input_point_cloud_per_axis_span",
+  "point_cloud": "datasets/Armadillo/armadillo_surface_points_250k_20260526.csv",
+  "bbox_pad_fraction_each_side": 0.1,
+  "level": 0.0,
+  "field_min": -0.11612094193696976,
+  "field_max": 0.4669938087463379,
+  "component_policy": "all_components",
+  "vertices": 292186,
+  "faces": 584368,
+  "out_mesh_npz": "result/reconstruction/zero_mesh.npz"
+}

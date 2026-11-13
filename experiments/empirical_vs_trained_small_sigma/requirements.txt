@@ -1,0 +1,4 @@
+# Install the method dependencies and the experiment reporting tools.
+-r ../../requirements.txt
+pandas>=2.0,<3.0
+matplotlib>=3.7,<3.11

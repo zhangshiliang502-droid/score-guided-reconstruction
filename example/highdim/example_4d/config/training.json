@@ -1,0 +1,122 @@
+{
+  "schema": "paper-highdim-training-configuration/v4",
+  "dataset": "example_4d",
+  "source_name": "wavy_tube_s1xs2_4d",
+  "ambient_dim": 4,
+  "intrinsic_dim": 3,
+  "topology": "S^1 x S^2",
+  "analytic_definition": {
+    "module": "analytic_expression.py",
+    "class": "WavyTubeS1xS2_4D"
+  },
+  "data": {
+    "path": "dataset/wavy_tube_s1xs2_4d_surface_1M_seed2026071801.npy",
+    "metadata_path": "dataset/wavy_tube_s1xs2_4d_surface_1M_seed2026071801.json",
+    "generator": "../../../02_highdim_sgr/code/generate_paper_data.py",
+    "samples": 1000000,
+    "sampling": "surface_area_rejection",
+    "seed": 2026071801,
+    "dtype": "float32",
+    "sampling_target": "surface_area_uniform",
+    "sampling_stats": {
+      "pilot_size": 65536,
+      "pilot_density_mean": 0.14738635349753665,
+      "pilot_density_max": 0.3096271036939072,
+      "density_bound_factor": 2,
+      "density_bound": 0.6192542073878144,
+      "observed_density_max": 0.31020521289859426,
+      "proposed": 4227072,
+      "acceptance_rate": 0.2365703730620155,
+      "surface_measure_estimate": 11.637160025118396
+    },
+    "normalization": {
+      "mean_accumulator": "float32",
+      "data_mean": [
+        0.11909478157758713,
+        -0.011521367356181145,
+        0.015452107414603233,
+        0.004595115780830383
+      ],
+      "data_scale_max_center_radius": 2.0698914527893066
+    },
+    "bounding_box": {
+      "min": [
+        -1.6012108325958252,
+        -1.874351978302002,
+        -0.3443397879600525,
+        -0.450558602809906
+      ],
+      "max": [
+        2.0759947299957275,
+        1.8128104209899902,
+        0.41583967208862305,
+        0.4931429326534271
+      ]
+    },
+    "surface_verification": {
+      "implicit_abs_max_sample20k": 5.987914950544848e-07,
+      "implicit_abs_mean_sample20k": 9.760508508172005e-08,
+      "gradient_norm_min_sample20k": 4.720753164455899
+    },
+    "generation_performance": {
+      "elapsed_sec": 19.290858338586986,
+      "points_per_sec": 51838.02516447528
+    }
+  },
+  "energy_training": {
+    "score_source": "Energy-based diffusion",
+    "score_parameterization": "conservative scalar EnergyMLP",
+    "sigma": 0.01,
+    "train_size": 900000,
+    "val_size": 100000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "eval_batch_size": 4096,
+    "learning_rate": 0.0002,
+    "hidden_dim": 256,
+    "num_blocks": 4,
+    "seed": 2026071802
+  },
+  "sgr_training": {
+    "model": "SIREN 128x4 omega0=20",
+    "train_size": 220000,
+    "val_size": 30000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "global_batch_size": 4096,
+    "eval_batches": 12,
+    "learning_rate": 0.0001,
+    "local_query_mode": "radial_shell",
+    "local_shell_center_sigma": 2.5,
+    "local_shell_std_sigma": 1.0,
+    "loss": "score_pull_plus_global_cosine",
+    "lambda_score_pull": 1000,
+    "lambda_dir": 20,
+    "seed": 2026071803,
+    "local_residual_normalization": "none"
+  },
+  "reconstruction": {
+    "method": "newton_zero_projection",
+    "zero_points": 250000,
+    "metric_space": "physical",
+    "seed": 2026071804,
+    "seed_count": 1000000,
+    "seed_initialization": "uniform_bbox",
+    "projection_batch_size": 65536,
+    "projection_iterations": 20,
+    "projection_max_step": 0.1,
+    "projection_residual": 0.0001
+  },
+  "evaluation": {
+    "reference_mode": "analytic",
+    "evaluation_points": 100000,
+    "spacing_reference_points": 250000,
+    "analytic_projection_iterations": 15,
+    "metric_space": "normalized"
+  },
+  "codimension": 1,
+  "dataset_description": {
+    "complexity": "seven-frequency centerline, varying ellipsoidal fiber, and coupled fiber twist",
+    "family": "anisotropic multi-harmonic tube hypersurface"
+  }
+}

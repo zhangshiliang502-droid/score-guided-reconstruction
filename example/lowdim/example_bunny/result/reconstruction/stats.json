@@ -1,0 +1,30 @@
+{
+  "extractor": "formal_sgr_complete_marching_cubes",
+  "checkpoint": "result/implicit_function/best.pt",
+  "step": 98000,
+  "grid_n": 360,
+  "axis_ranges": [
+    [
+      -0.1102478951215744,
+      0.07657727599143982
+    ],
+    [
+      0.017595374956727028,
+      0.20270510017871857
+    ],
+    [
+      -0.0739288404583931,
+      0.0708608478307724
+    ]
+  ],
+  "bounds_source": "input_point_cloud_per_axis_span",
+  "point_cloud": "datasets/Bunny/bunny_surface_points_250k_20260526.csv",
+  "bbox_pad_fraction_each_side": 0.1,
+  "level": 0.0,
+  "field_min": -0.157772958278656,
+  "field_max": 0.35476064682006836,
+  "component_policy": "all_components",
+  "vertices": 370640,
+  "faces": 741276,
+  "out_mesh_npz": "result/reconstruction/zero_mesh.npz"
+}

@@ -1,0 +1,30 @@
+{
+  "extractor": "formal_sgr_complete_marching_cubes",
+  "checkpoint": "result/implicit_function/best.pt",
+  "step": 76000,
+  "grid_n": 360,
+  "axis_ranges": [
+    [
+      -1.1999984979629517,
+      1.1999958753585815
+    ],
+    [
+      -1.1999925374984741,
+      1.1999775171279907
+    ],
+    [
+      -1.1999984979629517,
+      1.1999988555908203
+    ]
+  ],
+  "bounds_source": "input_point_cloud_per_axis_span",
+  "point_cloud": "datasets/Sphere/full_sphere_surface_points_250k_20260528.csv",
+  "bbox_pad_fraction_each_side": 0.1,
+  "level": 0.0,
+  "field_min": -0.043629325926303864,
+  "field_max": 0.08224108070135117,
+  "component_policy": "all_components",
+  "vertices": 421674,
+  "faces": 843344,
+  "out_mesh_npz": "result/reconstruction/zero_mesh.npz"
+}

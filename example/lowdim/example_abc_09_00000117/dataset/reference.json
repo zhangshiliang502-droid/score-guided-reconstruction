@@ -1,0 +1,7 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "ABC_09_00000117",
+  "evaluation_seed_offset": 15,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/ABC_Official_Additional_12/meshes/00000117_ce24e0cbec8e45c89735d148_trimesh_009.obj"
+}

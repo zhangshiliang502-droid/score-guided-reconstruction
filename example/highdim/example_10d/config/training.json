@@ -1,0 +1,156 @@
+{
+  "schema": "paper-highdim-training-configuration/v4",
+  "dataset": "example_10d",
+  "source_name": "mobius_clifford_s4xs5_10d",
+  "ambient_dim": 10,
+  "intrinsic_dim": 9,
+  "topology": "S^4 x S^5",
+  "analytic_definition": {
+    "module": "analytic_expression.py",
+    "class": "MobiusCliffordS4xS5_10D"
+  },
+  "data": {
+    "path": "dataset/mobius_clifford_s4xs5_10d_surface_1M_seed2026071821.npy",
+    "metadata_path": "dataset/mobius_clifford_s4xs5_10d_surface_1M_seed2026071821.json",
+    "generator": "../../../02_highdim_sgr/code/generate_paper_data.py",
+    "samples": 1000000,
+    "sampling": "surface_area_rejection",
+    "seed": 2026071821,
+    "dtype": "float32",
+    "sampling_target": "surface_area_uniform",
+    "sampling_stats": {
+      "pilot_size": 65536,
+      "pilot_density_mean": 19.66588616995526,
+      "pilot_density_max": 538.5716183717852,
+      "density_bound_factor": 2,
+      "density_bound": 1077.1432367435705,
+      "observed_density_max": 636.289475777982,
+      "proposed": 55050240,
+      "acceptance_rate": 0.01816522507440476,
+      "surface_measure_estimate": 16048.395431341154
+    },
+    "normalization": {
+      "mean_accumulator": "float32",
+      "data_mean": [
+        0.3482803404331207,
+        -0.2596823573112488,
+        0.19877538084983826,
+        0.13578875362873077,
+        -0.09786466509103775,
+        -0.007954682223498821,
+        -7.992133760126308e-05,
+        0.00018517262651585042,
+        -0.00044197216629981995,
+        -1.7696253053145483e-05
+      ],
+      "data_scale_max_center_radius": 2.9813151359558105
+    },
+    "bounding_box": {
+      "min": [
+        -2.480125904083252,
+        -2.894548177719116,
+        -2.6465914249420166,
+        -2.7081964015960693,
+        -2.8212013244628906,
+        -1.201041579246521,
+        -1.190408706665039,
+        -1.193211317062378,
+        -1.1914820671081543,
+        -1.1907955408096313
+      ],
+      "max": [
+        2.9629807472229004,
+        2.573073625564575,
+        2.836310863494873,
+        2.8160464763641357,
+        2.6548006534576416,
+        1.1832945346832275,
+        1.208284854888916,
+        1.1942336559295654,
+        1.2049951553344727,
+        1.1820039749145508
+      ]
+    },
+    "surface_verification": {
+      "implicit_abs_max_sample20k": 2.3399146353852984e-07,
+      "implicit_abs_mean_sample20k": 3.745411253298636e-08,
+      "gradient_norm_min_sample20k": 1.6978230685297455
+    },
+    "generation_performance": {
+      "elapsed_sec": 19.970505982637405,
+      "points_per_sec": 50073.84394113058
+    }
+  },
+  "energy_training": {
+    "score_source": "Energy-based diffusion",
+    "score_parameterization": "conservative scalar EnergyMLP",
+    "sigma": 0.01,
+    "train_size": 900000,
+    "val_size": 100000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "eval_batch_size": 4096,
+    "learning_rate": 0.0002,
+    "hidden_dim": 256,
+    "num_blocks": 4,
+    "seed": 2026071822
+  },
+  "sgr_training": {
+    "model": "SIREN 128x4 omega0=20",
+    "train_size": 220000,
+    "val_size": 30000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "global_batch_size": 4096,
+    "eval_batches": 12,
+    "learning_rate": 0.0001,
+    "local_query_mode": "radial_shell",
+    "local_shell_center_sigma": 2.5,
+    "local_shell_std_sigma": 1.0,
+    "loss": "score_pull_plus_global_cosine",
+    "lambda_score_pull": 1000,
+    "lambda_dir": 20,
+    "seed": 2026071823,
+    "local_residual_normalization": "none"
+  },
+  "reconstruction": {
+    "method": "newton_zero_projection",
+    "zero_points": 250000,
+    "metric_space": "physical",
+    "seed": 2026071824,
+    "seed_count": 1000000,
+    "seed_initialization": "uniform_bbox",
+    "projection_batch_size": 65536,
+    "projection_iterations": 20,
+    "projection_max_step": 0.1,
+    "projection_residual": 0.0001
+  },
+  "evaluation": {
+    "reference_mode": "analytic",
+    "evaluation_points": 100000,
+    "spacing_reference_points": 250000,
+    "analytic_projection_iterations": 15,
+    "metric_space": "normalized"
+  },
+  "codimension": 1,
+  "dataset_description": {
+    "complexity": "nonlinear Mobius warp of a high-dimensional Clifford product with strongly unequal principal radii",
+    "family": "conformally warped Clifford hypersurface",
+    "geometry": {
+      "major_radius": 1.72,
+      "tube_radius": 1.06,
+      "mobius_b": [
+        0.028,
+        -0.021,
+        0.016,
+        0.011,
+        -0.008,
+        0.004,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

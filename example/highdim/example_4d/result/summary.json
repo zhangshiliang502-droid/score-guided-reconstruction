@@ -1,0 +1,21 @@
+{
+  "schema": "paper-highdim-result-summary/v3",
+  "paper_table": 4,
+  "dataset": "example_4d",
+  "source_name": "wavy_tube_s1xs2_4d",
+  "method": "newton_zero_projection",
+  "checkpoint_step": 97000,
+  "coordinate_metrics": "normalized",
+  "reconstruction": {
+    "seed_initialization": "uniform_bbox",
+    "processed_candidates": 1000000,
+    "accepted_candidates": 1000000,
+    "projection_accept_ratio": 1,
+    "zero_points": 250000
+  },
+  "evaluation": {
+    "point_to_surface_rmse": 0.0007346869922486494,
+    "chamfer_l2": 0.000001291273982179717,
+    "ghost_surface_ratio": 0
+  }
+}

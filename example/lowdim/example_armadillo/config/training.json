@@ -1,0 +1,62 @@
+{
+  "schema": "paper-lowdim-training-configuration/v6",
+  "method": "SGR",
+  "dataset": "Armadillo",
+  "training_parameters": {
+    "num_points": 250000,
+    "data_mean": [
+      -2.274282217025757,
+      31.980701446533203,
+      2.2230849266052246
+    ],
+    "data_scale": 100.17652130126953,
+    "normalization_mean_accumulator": "float32",
+    "score_cache": {
+      "score_source": "surface_sampled_knn_empirical",
+      "score_support": "external_dense_surface_samples",
+      "score_support_requested": 40000000,
+      "artifact_included": false,
+      "local_cache_size": 250000,
+      "global_cache_size": 250000,
+      "sigma": 0.002,
+      "knn_k": 2048,
+      "local_sampling_mode": "clamped_gaussian",
+      "local_direction_mode": "normalized_isotropic_gaussian",
+      "local_radius_center_multiplier": 2.5,
+      "local_radius_std_multiplier": 1.0,
+      "local_radius_negative_policy": "clamp_zero",
+      "seed": 20285129,
+      "local_query_base": "normalized_input_point_cloud",
+      "global_bbox_source": "normalized_input_point_cloud",
+      "bbox_pad_ratio": 0.3
+    },
+    "loss": "score_pull_plus_global_cosine",
+    "input_gradient_backend": "analytic_joint",
+    "jit_analytic_gradient": true,
+    "fused_optimizer": true,
+    "lambda_global": 1.0,
+    "seed": 20286130,
+    "point_cloud": "datasets/Armadillo/armadillo_surface_points_250k_20260526.csv"
+  },
+  "extraction_parameters": {
+    "domain_source": "input_point_cloud",
+    "padding_definition": "fraction_of_each_axis_span_on_each_side",
+    "bbox_pad_fraction_each_side": 0.1,
+    "grid_resolution": 360,
+    "component_policy": "all_components",
+    "axis_ranges": [
+      [
+        -76.18357467651367,
+        76.1789436340332
+      ],
+      [
+        -69.31992988586425,
+        112.19923667907715
+      ],
+      [
+        -69.22632522583008,
+        69.24337692260742
+      ]
+    ]
+  }
+}

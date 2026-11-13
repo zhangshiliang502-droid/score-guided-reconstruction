@@ -1,0 +1,62 @@
+{
+  "schema": "paper-lowdim-training-configuration/v6",
+  "method": "SGR",
+  "dataset": "Bunny",
+  "training_parameters": {
+    "num_points": 250000,
+    "data_mean": [
+      -0.02660389244556427,
+      0.09411217272281647,
+      0.008386125788092613
+    ],
+    "data_scale": 0.11712779849767685,
+    "normalization_mean_accumulator": "float32",
+    "score_cache": {
+      "score_source": "surface_sampled_knn_empirical",
+      "score_support": "external_dense_surface_samples",
+      "score_support_requested": 40000000,
+      "artifact_included": false,
+      "local_cache_size": 250000,
+      "global_cache_size": 250000,
+      "sigma": 0.002,
+      "knn_k": 2048,
+      "local_sampling_mode": "clamped_gaussian",
+      "local_direction_mode": "normalized_isotropic_gaussian",
+      "local_radius_center_multiplier": 2.5,
+      "local_radius_std_multiplier": 1.0,
+      "local_radius_negative_policy": "clamp_zero",
+      "seed": 20344403,
+      "local_query_base": "normalized_input_point_cloud",
+      "global_bbox_source": "normalized_input_point_cloud",
+      "bbox_pad_ratio": 0.3
+    },
+    "loss": "score_pull_plus_global_cosine",
+    "input_gradient_backend": "analytic_joint",
+    "jit_analytic_gradient": true,
+    "fused_optimizer": true,
+    "lambda_global": 1.0,
+    "seed": 20345405,
+    "point_cloud": "datasets/Bunny/bunny_surface_points_250k_20260526.csv"
+  },
+  "extraction_parameters": {
+    "domain_source": "input_point_cloud",
+    "padding_definition": "fraction_of_each_axis_span_on_each_side",
+    "bbox_pad_fraction_each_side": 0.1,
+    "grid_resolution": 360,
+    "component_policy": "all_components",
+    "axis_ranges": [
+      [
+        -0.1102478962391615,
+        0.07657727338373661
+      ],
+      [
+        0.017595375701785085,
+        0.20270509384572505
+      ],
+      [
+        -0.07392883859574795,
+        0.07086084969341755
+      ]
+    ]
+  }
+}

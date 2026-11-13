@@ -1,0 +1,41 @@
+{
+  "schema": "paper-lowdim-best-result-summary/v4",
+  "method": "SGR",
+  "dataset": "CV2Radial_a020_f16",
+  "status": "complete",
+  "selection": {
+    "candidates": 3,
+    "primary_metric": "chamfer_l2",
+    "rule": "minimum_chamfer_l2_then_rmse_then_seed",
+    "selected_repeat": 2,
+    "selected_seed": 20310872
+  },
+  "training": {
+    "iterations": 100000,
+    "selected_checkpoint_step": 96000,
+    "selected_training_metric": {
+      "total": 0.005117326353987058,
+      "score_pull": 4.2493763174888954e-07,
+      "global_direction": 0.004692388776068886,
+      "global_cosine": 0.9953076094388962
+    },
+    "elapsed_sec": 961.7957212924957,
+    "gradient_backend": "analytic_joint",
+    "jit_trace": true,
+    "fused_adamw": true
+  },
+  "result_files": {
+    "best_checkpoint": "result/implicit_function/best.pt",
+    "mesh": "result/reconstruction/zero_mesh.npz",
+    "evaluation": "result/evaluation.json"
+  },
+  "evaluation": {
+    "protocol": "paper_bbox10_independent_mesh_1m_training_normalization_v3",
+    "rmse": 0.0021851356934178717,
+    "chamfer_l2": 9.544668845759919e-06,
+    "component_count": 1,
+    "ghost_component_count": 0,
+    "ghost_area_ratio": 0.0,
+    "training_input_rmse_diagnostic": 0.0021948173998469203
+  }
+}

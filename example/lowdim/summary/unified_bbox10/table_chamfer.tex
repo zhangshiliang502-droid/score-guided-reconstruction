@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\caption{Squared bidirectional Chamfer distance on independent reference-mesh samples. Both methods use $360^3$ final extraction over their input bounding box with 10\% padding per side, followed by the same training normalization (lower is better).}
+\label{tab:dwg-chamfer}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & DWG & SGR & DWG/SGR & Lower \\
+\midrule
+Bunny & \textbf{1.6432e-05} & 1.7165e-05 & 0.957 & DWG \\
+Knot & 8.9481e-06 & \textbf{8.0329e-06} & 1.114 & SGR \\
+Armadillo & \textbf{3.9175e-06} & 4.0515e-06 & 0.967 & DWG \\
+CV2Radial\_a020\_f16 & 1.2555e-02 & \textbf{9.5447e-06} & 1315.372 & SGR \\
+FlowerPetal & 1.1656e-05 & \textbf{6.4830e-06} & 1.798 & SGR \\
+Sphere & 5.0353e-02 & \textbf{7.9452e-06} & 6337.625 & SGR \\
+Monkey & \textbf{9.7050e-06} & 4.4745e-05 & 0.217 & DWG \\
+ABC\_01\_00004286 & 7.6608e-06 & \textbf{6.2262e-06} & 1.230 & SGR \\
+ABC\_02\_00001373 & 1.9826e-05 & \textbf{9.0879e-06} & 2.182 & SGR \\
+ABC\_03\_00003214 & \textbf{1.3056e-05} & 6.2741e-05 & 0.208 & DWG \\
+ABC\_04\_00009278 & 7.7099e-06 & \textbf{4.7905e-06} & 1.609 & SGR \\
+ABC\_05\_00009498 & 3.6637e-04 & \textbf{1.6970e-04} & 2.159 & SGR \\
+ABC\_06\_00001208 & 8.6584e-06 & \textbf{6.1808e-06} & 1.401 & SGR \\
+ABC\_07\_00004477 & 5.8873e-06 & \textbf{3.1115e-06} & 1.892 & SGR \\
+ABC\_08\_00002423 & 1.0178e-04 & \textbf{9.9361e-06} & 10.243 & SGR \\
+ABC\_09\_00000117 & 1.1464e-05 & \textbf{4.0491e-06} & 2.831 & SGR \\
+ABC\_10\_00000552 & 1.2406e-05 & \textbf{8.5290e-06} & 1.455 & SGR \\
+ABC\_11\_00000758 & 1.4568e-05 & \textbf{8.9331e-06} & 1.631 & SGR \\
+ABC\_12\_00001063 & 1.7615e-05 & \textbf{4.8973e-06} & 3.597 & SGR \\
+ABC\_13\_00001430 & 4.8590e-06 & \textbf{2.5785e-06} & 1.884 & SGR \\
+ABC\_14\_00001828 & 4.9992e-06 & \textbf{3.0589e-06} & 1.634 & SGR \\
+ABC\_15\_00002199 & 2.2869e-05 & \textbf{9.4658e-06} & 2.416 & SGR \\
+ABC\_16\_00002898 & 9.9694e-06 & \textbf{7.2026e-06} & 1.384 & SGR \\
+ABC\_17\_00003340 & 8.1645e-06 & \textbf{6.4142e-06} & 1.273 & SGR \\
+ABC\_18\_00003838 & 8.4423e-06 & \textbf{5.4390e-06} & 1.552 & SGR \\
+ABC\_19\_00005021 & 7.9151e-06 & \textbf{5.0096e-06} & 1.580 & SGR \\
+ABC\_20\_00005613 & 8.6521e-06 & \textbf{7.7878e-06} & 1.111 & SGR \\
+\bottomrule
+\end{tabular}
+\end{table}

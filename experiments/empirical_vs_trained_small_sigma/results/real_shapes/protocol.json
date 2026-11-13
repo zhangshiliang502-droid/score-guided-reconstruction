@@ -1,0 +1,71 @@
+{
+  "experiment": "empirical_knn_vs_trained_dsm_real_shapes",
+  "normalization": "float32_mean_and_max_center_radius",
+  "support_points_per_shape": 40000000,
+  "support_seed": 20260828,
+  "reference_points_per_shape": 2000000,
+  "reference_seed": 20260829,
+  "query_seed": 20260829,
+  "train_seeds": [
+    20260828,
+    20260829,
+    20260830
+  ],
+  "sigmas": [
+    0.01,
+    0.005,
+    0.002
+  ],
+  "empirical_knn": {
+    "gaussian_mass": 0.99,
+    "safety_factor": 1.1,
+    "k_by_sigma": {
+      "0.01": 56321,
+      "0.005": 14081,
+      "0.002": 2253
+    }
+  },
+  "trained_models": {
+    "parameterizations": [
+      "direct",
+      "energy"
+    ],
+    "steps": 30000,
+    "batch_size": 4096,
+    "examples_seen_per_model": 122880000,
+    "hidden_dimension": 256,
+    "residual_blocks": 4,
+    "learning_rate": 0.0002,
+    "warmup_steps": 2000,
+    "gradient_clip": 1.0,
+    "ema_decay": 0.999
+  },
+  "datasets": {
+    "bunny": {
+      "point_cloud": "datasets/Bunny/bunny_surface_points_250k_20260526.csv",
+      "point_cloud_sha256": "23aec94930cdbc5698305373532adf5d9e8472b9fb5b7db1a8bb700042cbff28",
+      "surface": "datasets/source_meshes/Bunny/BunnyMesh.ply",
+      "surface_sha256": "b1acc63bece78444aa2e15bdcc72371a201279b98c6f5d4b74c993d02f0566fe",
+      "surface_sampler": "area_uniform_reference_mesh",
+      "normalized_surface_area": 4.1642329353553444
+    },
+    "gargoyle": {
+      "point_cloud": "assets/gargoyle_pointcloud_100k.csv",
+      "point_cloud_sha256": "cf7881065823ec0ec16ce17c46b98887d15eeb10755df43792a95a2bf5394efa",
+      "surface": "assets/gargoyle_with_normals.ply",
+      "surface_sha256": "78bb925be84a1eced067eb21f4020417731b42c6256b21e86711ce54ee2c9b67",
+      "surface_sampler": "oriented_scan_local_tangent_patches",
+      "patch_radius_rule": "0.75 * clipped_8NN_distance / sqrt(8)",
+      "normalized_surface_area": 5.945759182495092
+    },
+    "flower": {
+      "point_cloud": "datasets/FlowerPetal/flower_petal_closed_surface_8lobes_250k.csv",
+      "point_cloud_sha256": "1492db201702f6ce1027add44630b29bfdffdbee46d159505be9fb020bc17cb0",
+      "surface": "assets/flower_reference_mesh.npz",
+      "surface_sha256": "274b9b53b08f3b772a555fe7138064dc1dff4c85d636012e4303f5cf9553f83c",
+      "surface_sampler": "area_uniform_reference_mesh",
+      "normalized_surface_area": 10.023801702232014
+    }
+  },
+  "input_path_base": "datasets/ paths are relative to the repository root; assets/ paths are relative to the experiment directory."
+}

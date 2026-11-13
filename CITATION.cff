@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Score-Guided Reconstruction"
+abstract: >-
+  Reference implementation and retained paper artifacts for learning scalar
+  potentials from diffusion-model scores and reconstructing codimension-one
+  manifolds as zero level sets.
+authors:
+  - family-names: "Zhang"
+    given-names: "Shiliang"
+version: 1.0.0
+repository-code: "https://github.com/zhangshiliang502-droid/score-guided-reconstruction"
+license: MIT
+keywords:
+  - manifold reconstruction
+  - implicit neural representation
+  - score-based learning
+  - point clouds
+  - diffusion models

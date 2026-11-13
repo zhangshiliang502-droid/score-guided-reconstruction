@@ -1,0 +1,62 @@
+{
+  "schema": "paper-lowdim-training-configuration/v6",
+  "method": "SGR",
+  "dataset": "ABC_02_00001373",
+  "training_parameters": {
+    "num_points": 100000,
+    "data_mean": [
+      -1.339320903070984e-07,
+      -9.119510702149114e-10,
+      -4.1127204419844077e-10
+    ],
+    "data_scale": 0.9999999403953552,
+    "normalization_mean_accumulator": "float32",
+    "score_cache": {
+      "score_source": "surface_sampled_knn_empirical",
+      "score_support": "external_dense_surface_samples",
+      "score_support_requested": 40000000,
+      "artifact_included": false,
+      "local_cache_size": 250000,
+      "global_cache_size": 250000,
+      "sigma": 0.002,
+      "knn_k": 2048,
+      "local_sampling_mode": "clamped_gaussian",
+      "local_direction_mode": "normalized_isotropic_gaussian",
+      "local_radius_center_multiplier": 2.5,
+      "local_radius_std_multiplier": 1.0,
+      "local_radius_negative_policy": "clamp_zero",
+      "seed": 20334317,
+      "local_query_base": "normalized_input_point_cloud",
+      "global_bbox_source": "normalized_input_point_cloud",
+      "bbox_pad_ratio": 0.3
+    },
+    "loss": "score_pull_plus_global_cosine",
+    "input_gradient_backend": "analytic_joint",
+    "jit_analytic_gradient": true,
+    "fused_optimizer": true,
+    "lambda_global": 1.0,
+    "seed": 20335318,
+    "point_cloud": "datasets/ABC_Official_Selected_8/selected/ABC_02_00001373/ABC_02_00001373_pointcloud_100k.csv"
+  },
+  "extraction_parameters": {
+    "domain_source": "input_point_cloud",
+    "padding_definition": "fraction_of_each_axis_span_on_each_side",
+    "bbox_pad_fraction_each_side": 0.1,
+    "grid_resolution": 360,
+    "component_policy": "all_components",
+    "axis_ranges": [
+      [
+        -0.8290845501999999,
+        0.7940954642
+      ],
+      [
+        -0.8787391658000001,
+        0.8603598358
+      ],
+      [
+        -0.8805958618,
+        0.8585171558
+      ]
+    ]
+  }
+}

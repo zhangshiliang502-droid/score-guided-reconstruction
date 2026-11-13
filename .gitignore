@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Local environments and logs
+.env
+.env.*
+*.log
+/logs/
+/runs/
+/outputs/
+/dist/
+
+# Local data workspaces; the frozen paper inputs under datasets/ are versioned.
+/data/
+
+# Local experiment workspaces; retain the paper ablation source and summaries.
+/experiments/*
+!/experiments/empirical_vs_trained_small_sigma/
+!/experiments/empirical_vs_trained_small_sigma/**
+
+# Training/reconstruction artifacts
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.stl
+*.ply
+*.obj
+*.xyz
+
+# The 27 selected low-dimensional paper checkpoints and zero meshes are the
+# retained result bundle.  They are intentionally versioned through Git LFS;
+# all other training artifacts remain ignored by the broad rules above.
+!example/lowdim/example_*/result/implicit_function/best.pt
+!example/lowdim/example_*/result/reconstruction/zero_mesh.npz
+
+# The 54 manifest-identified paper inputs are retained through Git LFS.
+!/datasets/**/*.obj
+!/datasets/**/*.ply
+!/datasets/**/*.npz
+
+# Local links exposed inside the paper experiment tree
+/example/lowdim/*/dataset/train.csv

@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\caption{Point-to-surface RMSE on independent reference-mesh samples. Both methods use $360^3$ final extraction over their input bounding box with 10\% padding per side, followed by the same training normalization (lower is better).}
+\label{tab:dwg-rmse}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & DWG & SGR & DWG/SGR & Lower \\
+\midrule
+Bunny & 1.6634e-03 & \textbf{1.2366e-03} & 1.345 & SGR \\
+Knot & 2.1151e-03 & \textbf{2.0050e-03} & 1.055 & SGR \\
+Armadillo & \textbf{1.4018e-03} & 1.4380e-03 & 0.975 & DWG \\
+CV2Radial\_a020\_f16 & 2.9463e-03 & \textbf{2.1851e-03} & 1.348 & SGR \\
+FlowerPetal & 2.4106e-03 & \textbf{1.8044e-03} & 1.336 & SGR \\
+Sphere & 2.6990e-03 & \textbf{1.9937e-03} & 1.354 & SGR \\
+Monkey & \textbf{2.5991e-03} & 5.9072e-03 & 0.440 & DWG \\
+ABC\_01\_00004286 & 1.9609e-03 & \textbf{1.7745e-03} & 1.105 & SGR \\
+ABC\_02\_00001373 & 3.1427e-03 & \textbf{2.1439e-03} & 1.466 & SGR \\
+ABC\_03\_00003214 & \textbf{2.5663e-03} & 6.3560e-03 & 0.404 & DWG \\
+ABC\_04\_00009278 & 1.9647e-03 & \textbf{1.5555e-03} & 1.263 & SGR \\
+ABC\_05\_00009498 & 1.6807e-02 & \textbf{5.5904e-03} & 3.006 & SGR \\
+ABC\_06\_00001208 & 2.0842e-03 & \textbf{1.7692e-03} & 1.178 & SGR \\
+ABC\_07\_00004477 & 1.7216e-03 & \textbf{1.2567e-03} & 1.370 & SGR \\
+ABC\_08\_00002423 & 7.0459e-03 & \textbf{2.2459e-03} & 3.137 & SGR \\
+ABC\_09\_00000117 & 2.4136e-03 & \textbf{1.4443e-03} & 1.671 & SGR \\
+ABC\_10\_00000552 & 2.4844e-03 & \textbf{2.0802e-03} & 1.194 & SGR \\
+ABC\_11\_00000758 & 2.6963e-03 & \textbf{2.1225e-03} & 1.270 & SGR \\
+ABC\_12\_00001063 & 2.9910e-03 & \textbf{1.5817e-03} & 1.891 & SGR \\
+ABC\_13\_00001430 & 1.5625e-03 & \textbf{1.1382e-03} & 1.373 & SGR \\
+ABC\_14\_00001828 & 1.5841e-03 & \textbf{1.2394e-03} & 1.278 & SGR \\
+ABC\_15\_00002199 & 3.2919e-03 & \textbf{2.2059e-03} & 1.492 & SGR \\
+ABC\_16\_00002898 & 2.2412e-03 & \textbf{1.9110e-03} & 1.173 & SGR \\
+ABC\_17\_00003340 & 2.0364e-03 & \textbf{1.8117e-03} & 1.124 & SGR \\
+ABC\_18\_00003838 & 2.0605e-03 & \textbf{1.6595e-03} & 1.242 & SGR \\
+ABC\_19\_00005021 & 1.9944e-03 & \textbf{1.5884e-03} & 1.256 & SGR \\
+ABC\_20\_00005613 & 2.0827e-03 & \textbf{1.9839e-03} & 1.050 & SGR \\
+\bottomrule
+\end{tabular}
+\end{table}

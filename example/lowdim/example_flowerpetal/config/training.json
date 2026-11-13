@@ -1,0 +1,62 @@
+{
+  "schema": "paper-lowdim-training-configuration/v6",
+  "method": "SGR",
+  "dataset": "FlowerPetal",
+  "training_parameters": {
+    "num_points": 250000,
+    "data_mean": [
+      0.0014947050949558616,
+      -0.0012459021527320147,
+      -0.0001183531858259812
+    ],
+    "data_scale": 1.480944275856018,
+    "normalization_mean_accumulator": "float32",
+    "score_cache": {
+      "score_source": "surface_sampled_knn_empirical",
+      "score_support": "external_dense_surface_samples",
+      "score_support_requested": 40000000,
+      "artifact_included": false,
+      "local_cache_size": 250000,
+      "global_cache_size": 250000,
+      "sigma": 0.002,
+      "knn_k": 2048,
+      "local_sampling_mode": "clamped_gaussian",
+      "local_direction_mode": "normalized_isotropic_gaussian",
+      "local_radius_center_multiplier": 2.5,
+      "local_radius_std_multiplier": 1.0,
+      "local_radius_negative_policy": "clamp_zero",
+      "seed": 20330733,
+      "local_query_base": "normalized_input_point_cloud",
+      "global_bbox_source": "normalized_input_point_cloud",
+      "bbox_pad_ratio": 0.3
+    },
+    "loss": "score_pull_plus_global_cosine",
+    "input_gradient_backend": "analytic_joint",
+    "jit_analytic_gradient": true,
+    "fused_optimizer": true,
+    "lambda_global": 1.0,
+    "seed": 20331735,
+    "point_cloud": "datasets/FlowerPetal/flower_petal_closed_surface_8lobes_250k.csv"
+  },
+  "extraction_parameters": {
+    "domain_source": "input_point_cloud",
+    "padding_definition": "fraction_of_each_axis_span_on_each_side",
+    "bbox_pad_fraction_each_side": 0.1,
+    "grid_resolution": 360,
+    "component_policy": "all_components",
+    "axis_ranges": [
+      [
+        -1.6898502588272095,
+        1.6899296522140503
+      ],
+      [
+        -1.6898703932762147,
+        1.6893743634223939
+      ],
+      [
+        -1.2630831837654113,
+        1.2691133856773376
+      ]
+    ]
+  }
+}

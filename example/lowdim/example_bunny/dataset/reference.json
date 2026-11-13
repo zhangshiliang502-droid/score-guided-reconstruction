@@ -1,0 +1,7 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "Bunny",
+  "evaluation_seed_offset": 0,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/source_meshes/Bunny/BunnyMesh.ply"
+}

@@ -1,0 +1,137 @@
+{
+  "schema": "paper-highdim-training-configuration/v4",
+  "dataset": "example_9d",
+  "source_name": "coupled_t4xs4_9d",
+  "ambient_dim": 9,
+  "intrinsic_dim": 8,
+  "topology": "T^4 x S^4",
+  "analytic_definition": {
+    "module": "analytic_expression.py",
+    "class": "CoupledT4xS4_9D"
+  },
+  "data": {
+    "path": "dataset/coupled_t4xs4_9d_surface_1M_seed2026071841.npy",
+    "metadata_path": "dataset/coupled_t4xs4_9d_surface_1M_seed2026071841.json",
+    "generator": "../../../02_highdim_sgr/code/generate_paper_data.py",
+    "samples": 1000000,
+    "sampling": "surface_area_rejection",
+    "seed": 2026071841,
+    "dtype": "float32",
+    "sampling_target": "surface_area_uniform",
+    "sampling_stats": {
+      "pilot_size": 65536,
+      "pilot_density_mean": 0.006240789603434966,
+      "pilot_density_max": 0.026373532289324878,
+      "density_bound_factor": 2,
+      "density_bound": 0.052747064578649756,
+      "observed_density_max": 0.032736043521300294,
+      "proposed": 8449857,
+      "acceptance_rate": 0.11834519803116195,
+      "surface_measure_estimate": 255.99264785576463
+    },
+    "normalization": {
+      "mean_accumulator": "float32",
+      "data_mean": [
+        0.0003424254828132689,
+        -0.0018061596201732755,
+        0.0021625440567731857,
+        0.0004588017181959003,
+        -0.0003531780675984919,
+        0.0001468940026825294,
+        0.0005797191406600177,
+        -0.0001881993084680289,
+        4.5985223550815135e-05
+      ],
+      "data_scale_max_center_radius": 3.31125807762146
+    },
+    "bounding_box": {
+      "min": [
+        -2.1216018199920654,
+        -2.128281593322754,
+        -1.8467868566513062,
+        -1.8511347770690918,
+        -1.6955418586730957,
+        -1.4475910663604736,
+        -1.3476382493972778,
+        -1.3414536714553833,
+        -0.33749786019325256
+      ],
+      "max": [
+        2.1055586338043213,
+        2.1057841777801514,
+        1.861946940422058,
+        1.8435571193695068,
+        1.6886204481124878,
+        1.456479549407959,
+        1.3429025411605835,
+        1.3452423810958862,
+        0.33390137553215027
+      ]
+    },
+    "surface_verification": {
+      "implicit_abs_max_sample20k": 1.020099268611574e-06,
+      "implicit_abs_mean_sample20k": 2.2131295588737055e-07,
+      "gradient_norm_min_sample20k": 6.716894277685126
+    },
+    "generation_performance": {
+      "elapsed_sec": 338.6019066683948,
+      "points_per_sec": 2953.3206408649567
+    }
+  },
+  "energy_training": {
+    "score_source": "Energy-based diffusion",
+    "score_parameterization": "conservative scalar EnergyMLP",
+    "sigma": 0.01,
+    "train_size": 900000,
+    "val_size": 100000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "eval_batch_size": 4096,
+    "learning_rate": 0.0002,
+    "hidden_dim": 256,
+    "num_blocks": 4,
+    "seed": 2026071842
+  },
+  "sgr_training": {
+    "model": "SIREN 128x4 omega0=20",
+    "train_size": 220000,
+    "val_size": 30000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "global_batch_size": 4096,
+    "eval_batches": 12,
+    "learning_rate": 0.0001,
+    "local_query_mode": "radial_shell",
+    "local_shell_center_sigma": 2.5,
+    "local_shell_std_sigma": 1.0,
+    "loss": "score_pull_plus_global_cosine",
+    "lambda_score_pull": 1000,
+    "lambda_dir": 20,
+    "seed": 2026071843,
+    "local_residual_normalization": "none"
+  },
+  "reconstruction": {
+    "method": "newton_zero_projection",
+    "zero_points": 250000,
+    "metric_space": "physical",
+    "seed": 2026071844,
+    "seed_count": 1000000,
+    "seed_initialization": "uniform_bbox",
+    "projection_batch_size": 65536,
+    "projection_iterations": 20,
+    "projection_max_step": 0.1,
+    "projection_residual": 0.0001
+  },
+  "evaluation": {
+    "reference_mode": "analytic",
+    "evaluation_points": 100000,
+    "spacing_reference_points": 250000,
+    "analytic_projection_iterations": 15,
+    "metric_space": "normalized"
+  },
+  "codimension": 1,
+  "dataset_description": {
+    "complexity": "four coupled angular cycles, multi-frequency radial centers, five-axis anisotropy, and four noncommuting twists",
+    "family": "four-cycle coupled torus with anisotropic S4 fiber"
+  }
+}

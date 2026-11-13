@@ -1,0 +1,141 @@
+{
+  "schema": "lowdim-reconstruction-evaluation/v3",
+  "dataset": "ABC_05_00009498",
+  "method": "SGR",
+  "configuration": "config/training.json",
+  "mesh": "result/reconstruction/zero_mesh.npz",
+  "mesh_to_raw_transform": {
+    "definition": "raw_vertex = mesh_vertex * scale + translation",
+    "scale": 1.0,
+    "translation": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "reference_pointcloud": "datasets/ABC_Official_Selected_8/selected/ABC_05_00009498/ABC_05_00009498_pointcloud_100k.csv",
+  "reference_frame": "training_mean_maxradius_normalized",
+  "vertices": 715111,
+  "faces": 1430250,
+  "normalization": {
+    "contract": "training_mean_and_max_center_radius",
+    "data_mean_raw": [
+      8.834302178684084e-09,
+      4.638135653323161e-09,
+      9.070753748119387e-08
+    ],
+    "data_scale_raw": 0.9999999403953552,
+    "applies_to": [
+      "point_to_surface",
+      "chamfer_l2",
+      "ghost_zero",
+      "training_input_diagnostic"
+    ]
+  },
+  "point_to_surface": {
+    "definition": "sqrt(mean_i dist(x_i, M)^2)",
+    "canonical_point_kind": "independent_mesh_surface_sample_exact_similarity_aligned",
+    "canonical_point_source": "datasets/ABC_Official_Selected_8/selected/ABC_05_00009498/ABC_05_00009498_mesh.obj",
+    "canonical_points": 1000000,
+    "surface_samples": 1000000,
+    "canonical_seed": 20260728,
+    "surface_seed": 20270728,
+    "fitting_error": 3.1252509634449894e-05,
+    "fit_rmse": 0.005590394407772129
+  },
+  "training_input_diagnostic": {
+    "definition": "sqrt(mean_i dist(x_i, M)^2)",
+    "role": "diagnostic_only_not_table_1",
+    "input_points": 100000,
+    "surface_samples": 1000000,
+    "fitting_error": 3.200650850255134e-05,
+    "fit_rmse": 0.005657429496030095
+  },
+  "chamfer_l2": {
+    "definition": "mean d(reconstruction,GT)^2 + mean d(GT,reconstruction)^2",
+    "ground_truth_kind": "independent_mesh_surface_sample_exact_similarity_aligned",
+    "ground_truth_source": "datasets/ABC_Official_Selected_8/selected/ABC_05_00009498/ABC_05_00009498_mesh.obj",
+    "test_samples": 1000000,
+    "reconstruction_samples": 1000000,
+    "test_seed": 20260728,
+    "reconstruction_seed": 20270728,
+    "normalization_contract": "training_mean_and_max_center_radius",
+    "normalization_scale_raw": 0.9999999403953552,
+    "reconstruction_to_test_mse": 0.00013845210821057083,
+    "test_to_reconstruction_mse": 3.1252509634449894e-05,
+    "value": 0.0001697046178450207
+  },
+  "ghost_zero": {
+    "detector": "extracted_mesh_connected_component_median_distance",
+    "spacing_sample_size": 100000,
+    "spacing_k": 8,
+    "spacing_median": 0.015042454900188195,
+    "r_out_factor": 3.0,
+    "r_out": 0.04512736470056458,
+    "component_count": 6,
+    "ghost_component_count": 0,
+    "ghost_area_ratio": 0.0,
+    "components": [
+      {
+        "component_id": 0,
+        "vertices": 713560,
+        "faces": 1427168,
+        "area": 9.477050126764867,
+        "area_ratio": 0.9978975405128025,
+        "distance_to_reference_p50": 0.005117307468340524,
+        "distance_to_reference_p90": 0.011104244929689365,
+        "ghost_component": false
+      },
+      {
+        "component_id": 1,
+        "vertices": 1215,
+        "faces": 2426,
+        "area": 0.016435154862645924,
+        "area_ratio": 0.001730559656856008,
+        "distance_to_reference_p50": 0.008228152242179106,
+        "distance_to_reference_p90": 0.01532400268509762,
+        "ghost_component": false
+      },
+      {
+        "component_id": 2,
+        "vertices": 306,
+        "faces": 608,
+        "area": 0.0034679543741958996,
+        "area_ratio": 0.0003651624813977905,
+        "distance_to_reference_p50": 0.007698395389885015,
+        "distance_to_reference_p90": 0.010505966895455198,
+        "ghost_component": false
+      },
+      {
+        "component_id": 3,
+        "vertices": 14,
+        "faces": 24,
+        "area": 2.679658505588316e-05,
+        "area_ratio": 2.8215790740505568e-06,
+        "distance_to_reference_p50": 0.008888606895969334,
+        "distance_to_reference_p90": 0.01209950776183413,
+        "ghost_component": false
+      },
+      {
+        "component_id": 5,
+        "vertices": 10,
+        "faces": 16,
+        "area": 3.200548522640836e-05,
+        "area_ratio": 3.3700565643472354e-06,
+        "distance_to_reference_p50": 0.011718504026439395,
+        "distance_to_reference_p90": 0.012396987754859638,
+        "ghost_component": false
+      },
+      {
+        "component_id": 4,
+        "vertices": 6,
+        "faces": 8,
+        "area": 5.182648656678305e-06,
+        "area_ratio": 5.457133051597266e-07,
+        "distance_to_reference_p50": 0.0037151969072901254,
+        "distance_to_reference_p90": 0.004467173924775981,
+        "ghost_component": false
+      }
+    ]
+  }
+}

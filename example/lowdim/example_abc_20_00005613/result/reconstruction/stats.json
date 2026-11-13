@@ -1,0 +1,30 @@
+{
+  "extractor": "formal_sgr_complete_marching_cubes",
+  "checkpoint": "result/implicit_function/best.pt",
+  "step": 94000,
+  "grid_n": 360,
+  "axis_ranges": [
+    [
+      -21.65986442565918,
+      21.659940719604492
+    ],
+    [
+      -23.054731369018555,
+      37.00497817993164
+    ],
+    [
+      -20.700002670288086,
+      23.700002670288086
+    ]
+  ],
+  "bounds_source": "input_point_cloud_per_axis_span",
+  "point_cloud": "datasets/ABC_Official_Additional_12/pointclouds/ABC_20_00005613_pointcloud_100k.csv",
+  "bbox_pad_fraction_each_side": 0.1,
+  "level": 0.0,
+  "field_min": -0.07050986588001251,
+  "field_max": 0.20551884174346924,
+  "component_policy": "all_components",
+  "vertices": 768018,
+  "faces": 1536052,
+  "out_mesh_npz": "result/reconstruction/zero_mesh.npz"
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "paper-lowdim-best-result-summary/v4",
+  "method": "SGR",
+  "dataset": "ABC_17_00003340",
+  "status": "complete",
+  "selection": {
+    "candidates": 3,
+    "primary_metric": "chamfer_l2",
+    "rule": "minimum_chamfer_l2_then_rmse_then_seed",
+    "selected_repeat": 2,
+    "selected_seed": 20324189
+  },
+  "training": {
+    "iterations": 100000,
+    "selected_checkpoint_step": 86000,
+    "selected_training_metric": {
+      "total": 0.0058999132209767895,
+      "score_pull": 3.601231668426408e-07,
+      "global_direction": 0.0013849475265791018,
+      "global_cosine": 0.9986150662104288
+    },
+    "elapsed_sec": 666.0042593479156,
+    "gradient_backend": "analytic_joint",
+    "jit_trace": true,
+    "fused_adamw": true
+  },
+  "result_files": {
+    "best_checkpoint": "result/implicit_function/best.pt",
+    "mesh": "result/reconstruction/zero_mesh.npz",
+    "evaluation": "result/evaluation.json"
+  },
+  "evaluation": {
+    "protocol": "paper_bbox10_independent_mesh_1m_training_normalization_v3",
+    "rmse": 0.0018116990827605935,
+    "chamfer_l2": 6.414220575934818e-06,
+    "component_count": 1,
+    "ghost_component_count": 0,
+    "ghost_area_ratio": 0.0,
+    "training_input_rmse_diagnostic": 0.0018153925349065519
+  }
+}

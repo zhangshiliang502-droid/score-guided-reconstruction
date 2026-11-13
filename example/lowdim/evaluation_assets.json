@@ -1,0 +1,473 @@
+{
+  "schema": "sgr-lowdim-evaluation-assets/v1",
+  "purpose": "Exact re-evaluation of the 27 retained low-dimensional SGR checkpoints and meshes",
+  "asset_root_contract": "Each path is resolved under datasets/ relative to --asset-root.",
+  "asset_count": 54,
+  "total_bytes": 374165288,
+  "sources": {
+    "abc_v00_chunk_0000": {
+      "url": "https://deep-geometry.github.io/abc-dataset/",
+      "acquisition": "Run git lfs pull from the repository root. The exact manifest-identified inputs are included under datasets/; verify them with --profile lowdim-evaluation --asset-root .",
+      "distribution_status": "included-in-this-repository-via-git-lfs",
+      "note": "ABC v00 OBJ chunk 0000 is the upstream geometry source; the exact paper point clouds and selected components are paper preprocessing outputs identified by SHA-256 below."
+    },
+    "stanford_3d_scanning_repository": {
+      "url": "https://graphics.stanford.edu/data/3Dscanrep/",
+      "acquisition": "Run git lfs pull from the repository root. The exact manifest-identified inputs are included under datasets/; verify them with --profile lowdim-evaluation --asset-root .",
+      "distribution_status": "included-in-this-repository-via-git-lfs",
+      "note": "Upstream source for Bunny and Armadillo; exact paper samples are identified by SHA-256 below."
+    },
+    "open3d_monkey_model": {
+      "url": "https://www.open3d.org/docs/release/python_api/open3d.data.MonkeyModel.html",
+      "acquisition": "Run git lfs pull from the repository root. The exact manifest-identified inputs are included under datasets/; verify them with --profile lowdim-evaluation --asset-root .",
+      "distribution_status": "included-in-this-repository-via-git-lfs",
+      "note": "Upstream source for Monkey; exact paper samples are identified by SHA-256 below."
+    },
+    "repository_analytic_geometry": {
+      "url": "https://github.com/zhangshiliang502-droid/score-guided-reconstruction/blob/main/03_evaluation/generate_analytic_reference_meshes.py",
+      "acquisition": "Run git lfs pull from the repository root. The exact manifest-identified inputs are included under datasets/; verify them with --profile lowdim-evaluation --asset-root .",
+      "distribution_status": "included-in-this-repository-via-git-lfs",
+      "note": "The exact analytic reference meshes and author-generated training clouds are included. The reference meshes can also be regenerated with the repository script."
+    },
+    "author_supplied_geometry": {
+      "url": "https://github.com/zhangshiliang502-droid/score-guided-reconstruction/blob/main/docs/DATA_LAYOUT.md",
+      "acquisition": "Run git lfs pull from the repository root. The exact manifest-identified inputs are included under datasets/; verify them with --profile lowdim-evaluation --asset-root .",
+      "distribution_status": "included-in-this-repository-via-git-lfs",
+      "note": "The exact author-supplied Knot point cloud and reference mesh are included for reproducibility; their sizes and SHA-256 identities are recorded below."
+    }
+  },
+  "assets": [
+    {
+      "dataset": "ABC_01_00004286",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_01_00004286/ABC_01_00004286_mesh.obj",
+      "bytes": 1750195,
+      "sha256": "8b7353f1e7f02aff4f21c53d8e656063d9a17274c50e11d9e7c8784023d529e0",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_01_00004286",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_01_00004286/ABC_01_00004286_pointcloud_100k.csv",
+      "bytes": 3776282,
+      "sha256": "6ee5db0345de8e91a5502610bb8215c36571dea6792ed0cf6a86eda929a2ff49",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_02_00001373",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_02_00001373/ABC_02_00001373_mesh.obj",
+      "bytes": 2470000,
+      "sha256": "0cfbc496c8b081652aff8ef27b84c0de4331320ae0a48b0733ead954e70193fc",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_02_00001373",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_02_00001373/ABC_02_00001373_pointcloud_100k.csv",
+      "bytes": 3761099,
+      "sha256": "adfafed8b0814cf5f2e329f42e64cf304ef7b17532a2e7dc3d1c99213a45acc0",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_03_00003214",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_03_00003214/ABC_03_00003214_mesh.obj",
+      "bytes": 4701476,
+      "sha256": "71e3f71aa5e38d99bda4df65f3c37619b7eef1f252ac11e302b1884fdce56496",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_03_00003214",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_03_00003214/ABC_03_00003214_pointcloud_100k.csv",
+      "bytes": 3758607,
+      "sha256": "461101dc6b602be97b9b9a761166ea8c4c4950126ef21387f59bdc1930ecd34f",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_04_00009278",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_04_00009278/ABC_04_00009278_mesh.obj",
+      "bytes": 2308499,
+      "sha256": "04fe2df842806af45840a8eaa942f5aa352f011d6383256724103658dcbc0152",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_04_00009278",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_04_00009278/ABC_04_00009278_pointcloud_100k.csv",
+      "bytes": 3765533,
+      "sha256": "0c5b616d0d045f5d146b73af3a37c466f2c1f2a8ca1ad6d4040f4fc8d60eea63",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_05_00009498",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_05_00009498/ABC_05_00009498_mesh.obj",
+      "bytes": 2246400,
+      "sha256": "dc0ba6f57e12ad855a4e061b7073e4e41897a23c1285ac4452d26acd942bc920",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_05_00009498",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_05_00009498/ABC_05_00009498_pointcloud_100k.csv",
+      "bytes": 3777975,
+      "sha256": "55e97a00a4f6274d1fbac498ccdc4b73480280d2ef83b912726015038415b882",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_06_00001208",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_06_00001208/ABC_06_00001208_mesh.obj",
+      "bytes": 2205045,
+      "sha256": "ce4652e310ff32cf11068eb8caee58741634a9fa60d3f8bc00f3938a37128081",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_06_00001208",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_06_00001208/ABC_06_00001208_pointcloud_100k.csv",
+      "bytes": 3752771,
+      "sha256": "e1830a75bbe93c6635e021e3501e9ffc9afdee35d3f607f68ff902860238e28b",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_07_00004477",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_07_00004477/ABC_07_00004477_mesh.obj",
+      "bytes": 1115258,
+      "sha256": "524ca59392eea9a78c9e3efa793e9ef605672425d6093863073c6e52a2d3b825",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_07_00004477",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_07_00004477/ABC_07_00004477_pointcloud_100k.csv",
+      "bytes": 3797088,
+      "sha256": "c90d22ff07e210464a140697083da733dcedc462b02fa809cdbaf4349101f78e",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_08_00002423",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_08_00002423/ABC_08_00002423_mesh.obj",
+      "bytes": 2017963,
+      "sha256": "e86b3f42185aaab16c32a44995fcb69f45405e198bde492e9cadd0e9eb98b38c",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_08_00002423",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Selected_8/selected/ABC_08_00002423/ABC_08_00002423_pointcloud_100k.csv",
+      "bytes": 3792392,
+      "sha256": "b30fdea03a7fa2d0ba4d4033fe485147cca0b3164ebd6cde48fa2b03f9ba95d1",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_09_00000117",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00000117_ce24e0cbec8e45c89735d148_trimesh_009.obj",
+      "bytes": 4092931,
+      "sha256": "16873854be5a707e420c328f4f206d29e6dd4cc154426b47afabb0b65d4a8030",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_09_00000117",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_09_00000117_pointcloud_100k.csv",
+      "bytes": 7657851,
+      "sha256": "b376bf80f7d0e84deffef288980527c715b3dc092ac40e057565e79c8314987d",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_10_00000552",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00000552_41a24c0b74a34217832f5af0_trimesh_003.obj",
+      "bytes": 5369260,
+      "sha256": "3eaa0a6ca92d590fce50c074721c2e4de06610e7209c5d42fe75630b78b8db98",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_10_00000552",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_10_00000552_pointcloud_100k.csv",
+      "bytes": 7650662,
+      "sha256": "680b29eadd8723bad36333dbd9739b86e9aa20a194c9bade8a275ac3144b1239",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_11_00000758",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00000758_8ab50540e9804365a8717ec0_trimesh_005.obj",
+      "bytes": 10528226,
+      "sha256": "211d83cf3fa62073b34784dd5e63eb15d851576a1c7802157f6588ffef6177eb",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_11_00000758",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_11_00000758_pointcloud_100k.csv",
+      "bytes": 7649566,
+      "sha256": "d127d072d18bdd7ee00ca5dbeb8bf7f2aaf71292562992c05808bdf848ffbf06",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_12_00001063",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00001063_c6fda10dc58448d1951c5cc3_trimesh_000.obj",
+      "bytes": 5909874,
+      "sha256": "8431083cd72191882a7d927e23109e3c6a54fbcb7d19cbb04c487cab7899ddbb",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_12_00001063",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_12_00001063_pointcloud_100k.csv",
+      "bytes": 7687715,
+      "sha256": "7cd47590b6d5480a6479d2fe1fd248bf32fb645fdb78fbaa0ecf428f61679f23",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_13_00001430",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00001430_a45f6c99e2154f3b94955175_trimesh_014.obj",
+      "bytes": 3043581,
+      "sha256": "22926fb45c9c1469354a7e4249d7a61a439a5ea7981b296a424199a1dd10c8aa",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_13_00001430",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_13_00001430_pointcloud_100k.csv",
+      "bytes": 7578046,
+      "sha256": "f7a915b11e5971b77ae308ad5b9fbda7b3f25b5a2e2dfc93d047d3c3d8de1061",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_14_00001828",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00001828_f8ce225b03b045e1a8743a75_trimesh_000.obj",
+      "bytes": 4126823,
+      "sha256": "c1315cdf532b01c2766be67082dad7ca5098c07ca0d2674bd9529aaac595235a",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_14_00001828",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_14_00001828_pointcloud_100k.csv",
+      "bytes": 7600753,
+      "sha256": "93dcf39aa270da5c0b1039d298a3c44520e04992a78b8349f7192a86b25a21d2",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_15_00002199",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00002199_6553d5a5a37549379146953a_trimesh_002.obj",
+      "bytes": 6597255,
+      "sha256": "e5dd97a81b128e3587938ae24a6e137c4ccdba81c4abe944b43b6a920f279dfc",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_15_00002199",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_15_00002199_pointcloud_100k.csv",
+      "bytes": 7695534,
+      "sha256": "0904155ab7e7c482a916d388b7149cbfc1814b120fb68a10f6ae6e1e0e456c25",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_16_00002898",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00002898_635bf5c85753420fbc65a4c5_trimesh_000.obj",
+      "bytes": 7676537,
+      "sha256": "bb9ad77db55fa995faca98474a53beab4ed067fc44224732b9f3e736102da1eb",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_16_00002898",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_16_00002898_pointcloud_100k.csv",
+      "bytes": 7692079,
+      "sha256": "12c5fdcf8ce5b2234770432cf03b686b2e3714a4cdc14457a6f1bc0da3777f42",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_17_00003340",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00003340_d6d4eff41d95422ca7212c77_trimesh_000.obj",
+      "bytes": 6111888,
+      "sha256": "ed75ed10663a4800f830c2940c9e2b280800d324304bc2270ede79bb48b98784",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_17_00003340",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_17_00003340_pointcloud_100k.csv",
+      "bytes": 7695111,
+      "sha256": "cd0620c22143a765c2b497af2e325416b43ac80add651d80f2cb24ffd61ac79c",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_18_00003838",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00003838_72cefc6fb8cf4e0eaa77627b_trimesh_001.obj",
+      "bytes": 6607610,
+      "sha256": "a6b6c53681e4748d36e2c8bbbcac6ce3502f3c90ede9aa962a9ae2547e9832ce",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_18_00003838",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_18_00003838_pointcloud_100k.csv",
+      "bytes": 7642637,
+      "sha256": "3a8ad7dc15576b0203d22d6e3887ffbded801f40cb190eff035d82920965fe04",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_19_00005021",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00005021_0a675fbb89444f1a91da0315_trimesh_006.obj",
+      "bytes": 4326554,
+      "sha256": "68572b0032afb846b44765d01da0e066968e1b551cbb3bd6e00a8f719546e50e",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_19_00005021",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_19_00005021_pointcloud_100k.csv",
+      "bytes": 7649849,
+      "sha256": "959d9286a1eeee122edd1ab3525efaf1dcf97eb80eec1db12aa6fc98a68fc691",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_20_00005613",
+      "role": "independent_reference_mesh",
+      "path": "datasets/ABC_Official_Additional_12/meshes/00005613_6d37bbe402a9413ab9629242_trimesh_007.obj",
+      "bytes": 7328863,
+      "sha256": "79b44b5efbe69d92045beb3dff0291b50dc2872f24c3e03dbace1d7af4947c00",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "ABC_20_00005613",
+      "role": "training_point_cloud",
+      "path": "datasets/ABC_Official_Additional_12/pointclouds/ABC_20_00005613_pointcloud_100k.csv",
+      "bytes": 7627818,
+      "sha256": "ecc0cd7aa1c9e3dd2d69c521719cd4ec2c2c3942f53d52197e2beab6433c93f8",
+      "source_group": "abc_v00_chunk_0000"
+    },
+    {
+      "dataset": "Armadillo",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/Armadillo/armadillo.obj",
+      "bytes": 13511444,
+      "sha256": "a51deb8aed070e9d4df05b89f4568639a1543ee88f945798cf2119113d70e90a",
+      "source_group": "stanford_3d_scanning_repository"
+    },
+    {
+      "dataset": "Armadillo",
+      "role": "training_point_cloud",
+      "path": "datasets/Armadillo/armadillo_surface_points_250k_20260526.csv",
+      "bytes": 19301132,
+      "sha256": "7cc5d1f36a1e8df92d12f11424ae9330e6b33fc2fbff9cd62be0bf636db8e1eb",
+      "source_group": "stanford_3d_scanning_repository"
+    },
+    {
+      "dataset": "Bunny",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/Bunny/BunnyMesh.ply",
+      "bytes": 3033195,
+      "sha256": "b1acc63bece78444aa2e15bdcc72371a201279b98c6f5d4b74c993d02f0566fe",
+      "source_group": "stanford_3d_scanning_repository"
+    },
+    {
+      "dataset": "Bunny",
+      "role": "training_point_cloud",
+      "path": "datasets/Bunny/bunny_surface_points_250k_20260526.csv",
+      "bytes": 19286787,
+      "sha256": "23aec94930cdbc5698305373532adf5d9e8472b9fb5b7db1a8bb700042cbff28",
+      "source_group": "stanford_3d_scanning_repository"
+    },
+    {
+      "dataset": "CV2Radial_a020_f16",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/CV2Radial_a020_f16/CV2Radial_a020_f16_analytic_reference_512x1024.npz",
+      "bytes": 9184183,
+      "sha256": "1f52f15146f599ed516d43ff3724bad792f8650a91a978c3dbd0a4c5701c0e2e",
+      "source_group": "repository_analytic_geometry"
+    },
+    {
+      "dataset": "CV2Radial_a020_f16",
+      "role": "training_point_cloud",
+      "path": "datasets/CV2Radial_a020_f16/cv2_radial_a020_f16.csv",
+      "bytes": 5355409,
+      "sha256": "2556d8fc497149ac11d41ed9196102af4c4373ee5c9575efbcc12f15a8f0be36",
+      "source_group": "repository_analytic_geometry"
+    },
+    {
+      "dataset": "FlowerPetal",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/FlowerPetal/FlowerPetal_analytic_reference_512x1024.npz",
+      "bytes": 7049940,
+      "sha256": "ed8c0ce5c0455b6a504601475e9ba82f42c1daca4784c47cb575cccf6a04e367",
+      "source_group": "repository_analytic_geometry"
+    },
+    {
+      "dataset": "FlowerPetal",
+      "role": "training_point_cloud",
+      "path": "datasets/FlowerPetal/flower_petal_closed_surface_8lobes_250k.csv",
+      "bytes": 19125087,
+      "sha256": "1492db201702f6ce1027add44630b29bfdffdbee46d159505be9fb020bc17cb0",
+      "source_group": "repository_analytic_geometry"
+    },
+    {
+      "dataset": "Knot",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/Knot/KnotMesh.ply",
+      "bytes": 54920,
+      "sha256": "bda544c52e075b34effc1d0c5140a47df0d8de3fc6a9ed23418544dc2ddadd06",
+      "source_group": "author_supplied_geometry"
+    },
+    {
+      "dataset": "Knot",
+      "role": "training_point_cloud",
+      "path": "datasets/Knot/knot_surface_points_250k_20260526.csv",
+      "bytes": 19586937,
+      "sha256": "d9715833497ea9d676bc3f9d84b2596999ae357157d43d36195b4afb899b5547",
+      "source_group": "author_supplied_geometry"
+    },
+    {
+      "dataset": "Monkey",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/Monkey/monkey.obj",
+      "bytes": 1418749,
+      "sha256": "5b813c8e7f920ad471bcd76d0004a9af38c823967af7f91f867817870ee159ef",
+      "source_group": "open3d_monkey_model"
+    },
+    {
+      "dataset": "Monkey",
+      "role": "training_point_cloud",
+      "path": "datasets/Monkey/open3d_monkey_surface_points_250k_20260605.csv",
+      "bytes": 19324822,
+      "sha256": "48cbf9e202a516b253bc5cef9c329aba185a714741ad7850e0a7ec0b7d35ccf4",
+      "source_group": "open3d_monkey_model"
+    },
+    {
+      "dataset": "Sphere",
+      "role": "independent_reference_mesh",
+      "path": "datasets/source_meshes/Sphere/Sphere_analytic_reference_512x1024.npz",
+      "bytes": 6014508,
+      "sha256": "0630b2783dcb9b25e6fe9eee4f551520624b483fcb63b6a1201d80335f371374",
+      "source_group": "repository_analytic_geometry"
+    },
+    {
+      "dataset": "Sphere",
+      "role": "training_point_cloud",
+      "path": "datasets/Sphere/full_sphere_surface_points_250k_20260528.csv",
+      "bytes": 19374569,
+      "sha256": "db5630cc75c8fc75fa2dd6b6c9e71071bd81c087bff598577cd967e53dca5683",
+      "source_group": "repository_analytic_geometry"
+    }
+  ]
+}

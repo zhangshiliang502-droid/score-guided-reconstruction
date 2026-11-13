@@ -1,0 +1,7 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "Armadillo",
+  "evaluation_seed_offset": 2,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/source_meshes/Armadillo/armadillo.obj"
+}

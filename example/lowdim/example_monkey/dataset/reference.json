@@ -1,0 +1,7 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "Monkey",
+  "evaluation_seed_offset": 6,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/source_meshes/Monkey/monkey.obj"
+}

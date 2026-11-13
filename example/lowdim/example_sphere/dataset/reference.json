@@ -1,0 +1,16 @@
+{
+  "schema": "paper-lowdim-reference/v2",
+  "dataset": "Sphere",
+  "evaluation_seed_offset": 5,
+  "reference_kind": "independent_source_mesh",
+  "asset_root_path": "datasets/source_meshes/Sphere/Sphere_analytic_reference_512x1024.npz",
+  "coordinate_transform": {
+    "mode": "identity"
+  },
+  "provenance": {
+    "source_kind": "analytic_parameterization_not_training_pointcloud",
+    "generator": "03_evaluation/generate_analytic_reference_meshes.py",
+    "latitude_segments": 512,
+    "longitude_segments": 1024
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "paper-highdim-training-configuration/v4",
+  "dataset": "example_8d",
+  "source_name": "coupled_t3xs4_8d",
+  "ambient_dim": 8,
+  "intrinsic_dim": 7,
+  "topology": "T^3 x S^4",
+  "analytic_definition": {
+    "module": "analytic_expression.py",
+    "class": "CoupledT3xS4_8D"
+  },
+  "data": {
+    "path": "dataset/coupled_t3xs4_8d_surface_1M_seed2026071811.npy",
+    "metadata_path": "dataset/coupled_t3xs4_8d_surface_1M_seed2026071811.json",
+    "generator": "../../../02_highdim_sgr/code/generate_paper_data.py",
+    "samples": 1000000,
+    "sampling": "surface_area_rejection",
+    "seed": 2026071811,
+    "dtype": "float32",
+    "sampling_target": "surface_area_uniform",
+    "sampling_stats": {
+      "pilot_size": 65536,
+      "pilot_density_mean": 0.007707411269843672,
+      "pilot_density_max": 0.0367381830558509,
+      "density_bound_factor": 2,
+      "density_bound": 0.0734763661117018,
+      "observed_density_max": 0.038755697582201425,
+      "proposed": 9562991,
+      "acceptance_rate": 0.10456979411566945,
+      "surface_measure_estimate": 50.317217435905825
+    },
+    "normalization": {
+      "mean_accumulator": "float32",
+      "data_mean": [
+        0.0015042914310470223,
+        0.006969113368541002,
+        0.00278482842259109,
+        0.0017975090304389596,
+        0.0018715518526732922,
+        -0.0004169173480477184,
+        -2.8323547667241655e-05,
+        7.848160021239892e-05
+      ],
+      "data_scale_max_center_radius": 2.9229416847229004
+    },
+    "bounding_box": {
+      "min": [
+        -2.0773532390594482,
+        -2.009256362915039,
+        -1.7668706178665161,
+        -1.7802674770355225,
+        -1.5877894163131714,
+        -1.3570857048034668,
+        -0.321270614862442,
+        -0.39388197660446167
+      ],
+      "max": [
+        2.0513601303100586,
+        2.0954995155334473,
+        1.739698886871338,
+        1.7215211391448975,
+        1.6181678771972656,
+        1.3706305027008057,
+        0.32166001200675964,
+        0.3888920843601227
+      ]
+    },
+    "surface_verification": {
+      "implicit_abs_max_sample20k": 7.878028711605367e-07,
+      "implicit_abs_mean_sample20k": 1.5899505660087466e-07,
+      "gradient_norm_min_sample20k": 5.852966691966426
+    },
+    "generation_performance": {
+      "elapsed_sec": 451.1242358572781,
+      "points_per_sec": 2216.6842756733854
+    }
+  },
+  "energy_training": {
+    "score_source": "Energy-based diffusion",
+    "score_parameterization": "conservative scalar EnergyMLP",
+    "sigma": 0.01,
+    "train_size": 900000,
+    "val_size": 100000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "eval_batch_size": 4096,
+    "learning_rate": 0.0002,
+    "hidden_dim": 256,
+    "num_blocks": 4,
+    "seed": 2026071812
+  },
+  "sgr_training": {
+    "model": "SIREN 128x4 omega0=20",
+    "train_size": 220000,
+    "val_size": 30000,
+    "iterations": 100000,
+    "batch_size": 4096,
+    "global_batch_size": 4096,
+    "eval_batches": 12,
+    "learning_rate": 0.0001,
+    "local_query_mode": "radial_shell",
+    "local_shell_center_sigma": 2.5,
+    "local_shell_std_sigma": 1.0,
+    "loss": "score_pull_plus_global_cosine",
+    "lambda_score_pull": 1000,
+    "lambda_dir": 20,
+    "seed": 2026071813,
+    "local_residual_normalization": "none"
+  },
+  "reconstruction": {
+    "method": "newton_zero_projection",
+    "zero_points": 250000,
+    "metric_space": "physical",
+    "seed": 2026071814,
+    "seed_count": 1000000,
+    "seed_initialization": "uniform_bbox",
+    "projection_batch_size": 65536,
+    "projection_iterations": 20,
+    "projection_max_step": 0.1,
+    "projection_residual": 0.0001
+  },
+  "evaluation": {
+    "reference_mode": "analytic",
+    "evaluation_points": 100000,
+    "spacing_reference_points": 250000,
+    "analytic_projection_iterations": 15,
+    "metric_space": "normalized"
+  },
+  "codimension": 1,
+  "dataset_description": {
+    "complexity": "three coupled angular cycles, five-axis anisotropy, and three noncommuting fiber twists",
+    "family": "coupled multi-torus ellipsoidal-fiber hypersurface"
+  }
+}

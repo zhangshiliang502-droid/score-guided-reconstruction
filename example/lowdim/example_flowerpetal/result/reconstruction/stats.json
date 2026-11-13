@@ -1,0 +1,30 @@
+{
+  "extractor": "formal_sgr_complete_marching_cubes",
+  "checkpoint": "result/implicit_function/best.pt",
+  "step": 92000,
+  "grid_n": 360,
+  "axis_ranges": [
+    [
+      -1.6898502111434937,
+      1.6899296045303345
+    ],
+    [
+      -1.6898703575134277,
+      1.689374327659607
+    ],
+    [
+      -1.2630832195281982,
+      1.2691134214401245
+    ]
+  ],
+  "bounds_source": "input_point_cloud_per_axis_span",
+  "point_cloud": "datasets/FlowerPetal/flower_petal_closed_surface_8lobes_250k.csv",
+  "bbox_pad_fraction_each_side": 0.1,
+  "level": 0.0,
+  "field_min": -0.12240715324878693,
+  "field_max": 0.2710900902748108,
+  "component_policy": "all_components",
+  "vertices": 469200,
+  "faces": 938396,
+  "out_mesh_npz": "result/reconstruction/zero_mesh.npz"
+}
